@@ -16,15 +16,24 @@ class LoginPage extends StatelessWidget {
               Container(
                 width: 300,
                 height: 100,
-                child: TextField(
-                  controller: emailController,
+                child: Form(
+                  autovalidate: true,
+                  child: TextFormField(
+                    validator: validatorUsername,
+                    controller: emailController,
+                  ),
                 ),
               ),
               Container(
                 width: 300,
                 height: 100,
-                child: TextField(
-                  controller: passwordController,
+                child: Form(
+                  autovalidate: true,
+                  child: TextFormField(
+                    validator: validatorPassword,
+                    controller: passwordController,
+                    obscureText: true,
+                  ),
                 ),
               ),
               ElevatedButton(
@@ -50,5 +59,19 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String validatorUsername(String value) {
+    if (value.length < 3)
+      return 'Harus lebih 2 huruf';
+    else
+      return null;
+  }
+
+  String validatorPassword(String value) {
+    if (value.length <= 5)
+      return 'Harus lebih 5 huruf';
+    else
+      return null;
   }
 }
