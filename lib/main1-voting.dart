@@ -24,7 +24,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Favorite Car Votes')),
+      appBar: AppBar(
+        title: Text('Mobil Favorite'),
+      ),
       body: _buildBody(context),
     );
   }
