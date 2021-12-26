@@ -182,12 +182,16 @@ class LoginPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            return RegisterPage();
+            register;
           },
         ),
       ],
     );
   }
+}
+
+Widget register(context) {
+  return RegisterPage();
 }
 
 String validatorUsername(String value) {
