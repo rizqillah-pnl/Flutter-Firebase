@@ -5,11 +5,6 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Login Register Page",
-      initialRoute: "/",
-      routes: {
-        "/": (context) => LoginPage(),
-        RegisterPage.routeName: (context) => RegisterPage(),
-      },
     ),
   );
 }
@@ -183,7 +178,7 @@ class LoginPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            Navigator.pushNamed(context, "/registerPage");
+            RegisterPage();
           },
         ),
       ],
@@ -417,7 +412,7 @@ class RegisterPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            Navigator.pushNamed(context, "/");
+            LoginPage();
           },
         ),
       ],
