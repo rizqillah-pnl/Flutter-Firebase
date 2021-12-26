@@ -210,7 +210,7 @@ class RegisterPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            Navigator.pushNamed;
+            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
           },
         ),
       ],
