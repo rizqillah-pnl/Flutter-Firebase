@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'wrapper2.dart';
 
 void main() => runApp(Voting());
 
@@ -27,6 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Mobil Favorite'),
       ),
+      drawer: backHome(),
       body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('mobil').snapshots(),
         builder: (context, snapshot) {
@@ -47,6 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
   //   );
   // }
 
+  Widget backHome() {
+    return Wrapper();
+  }
+
   Widget _buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
     return ListView(
       padding: const EdgeInsets.only(top: 20.0),
@@ -59,30 +65,20 @@ class _MyHomePageState extends State<MyHomePage> {
     return Padding(
       key: ValueKey(record.name),
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-      child: Row(
-        children: <Widget>[
-          Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            child: ListTile(
-              title: Text(record.name),
-              trailing: Text(record.votes.toString()),
-              onTap: () => record.reference.update(
-                {
-                  'vote': FieldValue.increment(1)
-                },
-              ),
-            ),
-          ),
-          ElevatedButton(
-            child: Text("Kembali"),
-            onPressed: () {
-              Navigator.pop(context);
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(5.0),
+        ),
+        child: ListTile(
+          title: Text(record.name),
+          trailing: Text(record.votes.toString()),
+          onTap: () => record.reference.update(
+            {
+              'vote': FieldValue.increment(1)
             },
           ),
-        ],
+        ),
       ),
     );
   }
