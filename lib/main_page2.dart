@@ -107,7 +107,7 @@ class NavigationDrawer extends StatelessWidget {
       ),
       otherAccountsPictures: [
         ClipOval(
-          child: Image(image: AssetImage('assets/images/images2.jpg'), fit: BoxFit.cover),
+          child: Image(image: AssetImage('assets/images/images2.JPG'), fit: BoxFit.cover),
         ),
         ClipOval(
           child: Image(image: AssetImage('assets/images/image1.png'), fit: BoxFit.cover),
