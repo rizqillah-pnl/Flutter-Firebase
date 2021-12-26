@@ -103,14 +103,14 @@ class NavigationDrawer extends StatelessWidget {
   Widget _drawerHeader() {
     return UserAccountsDrawerHeader(
       currentAccountPicture: ClipOval(
-        child: Image(image: AssetImage('assets/images/orang1.jpeg'), fit: BoxFit.cover),
+        child: Image(image: AssetImage('assets/images/image3.jpg'), fit: BoxFit.cover),
       ),
       otherAccountsPictures: [
         ClipOval(
-          child: Image(image: AssetImage('assets/images/orang2.jpg'), fit: BoxFit.cover),
+          child: Image(image: AssetImage('assets/images/image2.jpg'), fit: BoxFit.cover),
         ),
         ClipOval(
-          child: Image(image: AssetImage('assets/images/orang3.jpeg'), fit: BoxFit.cover),
+          child: Image(image: AssetImage('assets/images/image1.png'), fit: BoxFit.cover),
         )
       ],
       accountName: Text(user.uid),
