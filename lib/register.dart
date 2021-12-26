@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'auth_services2.dart';
 import 'color.dart';
+import 'login.dart';
 
 class RegisterPage extends StatelessWidget {
   TextEditingController user = TextEditingController(text: "");
@@ -209,7 +210,7 @@ class RegisterPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            Navigator.pushNamed(context, "/");
+            LoginPage();
           },
         ),
       ],
