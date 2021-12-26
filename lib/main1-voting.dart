@@ -30,10 +30,12 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text('Mobil Favorite'),
           leading: IconButton(
-            icon: Icon(Icons.arrow_back),
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () {
+              Navigator.pop(context);
+            },
           ),
         ),
-        drawer: backHome(),
         body: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance.collection('mobil').snapshots(),
           builder: (context, snapshot) {
@@ -54,10 +56,6 @@ class _MyHomePageState extends State<MyHomePage> {
   //     },
   //   );
   // }
-
-  Widget backHome() {
-    return Wrapper();
-  }
 
   Widget _buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
     return ListView(
