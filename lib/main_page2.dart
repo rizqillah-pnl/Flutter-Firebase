@@ -50,25 +50,28 @@ class NavigationDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(user.email),
-      ),
-      drawer: sideBar(context),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Text(
-              user.uid,
-              style: TextStyle(fontSize: 20),
-            ),
-            ElevatedButton(
-              child: Text("Sign Out"),
-              onPressed: () async {
-                await AuthServices.signOut();
-              },
-            ),
-          ],
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(user.email),
+        ),
+        drawer: sideBar(context),
+        body: Center(
+          child: Column(
+            children: <Widget>[
+              Text(
+                user.uid,
+                style: TextStyle(fontSize: 20),
+              ),
+              ElevatedButton(
+                child: Text("Sign Out"),
+                onPressed: () async {
+                  await AuthServices.signOut();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

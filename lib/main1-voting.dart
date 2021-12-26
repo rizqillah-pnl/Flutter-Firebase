@@ -24,17 +24,23 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Mobil Favorite'),
-      ),
-      drawer: backHome(),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('mobil').snapshots(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) return LinearProgressIndicator();
-          return _buildList(context, snapshot.data.docs);
-        },
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Mobil Favorite'),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+          ),
+        ),
+        drawer: backHome(),
+        body: StreamBuilder<QuerySnapshot>(
+          stream: FirebaseFirestore.instance.collection('mobil').snapshots(),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) return LinearProgressIndicator();
+            return _buildList(context, snapshot.data.docs);
+          },
+        ),
       ),
     );
   }
