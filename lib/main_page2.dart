@@ -51,7 +51,7 @@ class NavigationDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(user.email),
+        title: Text("hello"),
       ),
       drawer: DrawerWidget(),
       endDrawer: DrawerWidget(),
