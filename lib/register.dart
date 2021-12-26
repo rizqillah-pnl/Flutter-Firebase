@@ -186,6 +186,7 @@ class RegisterPage extends StatelessWidget {
               ),
               onPressed: () async {
                 await AuthServices.signUp(user.text, password1.text);
+                Navigator.pop(context);
               },
             ),
             decoration: BoxDecoration(
