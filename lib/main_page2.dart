@@ -56,9 +56,19 @@ class NavigationDrawer extends StatelessWidget {
       drawer: DrawerWidget(),
       endDrawer: DrawerWidget(),
       body: Center(
-        child: Text(
-          user.uid,
-          style: TextStyle(fontSize: 20),
+        child: Column(
+          children: <Widget>[
+            Text(
+              user.uid,
+              style: TextStyle(fontSize: 20),
+            ),
+            ElevatedButton(
+              child: Text("Sign Out"),
+              onPressed: () async {
+                await AuthServices.signOut();
+              },
+            ),
+          ],
         ),
       ),
     );
