@@ -27,23 +27,25 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Mobil Favorite'),
       ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: FirebaseFirestore.instance.collection('mobil').snapshots(),
-        builder: (context, snapshot) {
-          child:
-          Row(
-            children: <Widget>[
-              ElevatedButton(
-                child: Text("Kembali"),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-            ],
-          );
-          if (!snapshot.hasData) return LinearProgressIndicator();
-          return _buildList(context, snapshot.data.docs);
-        },
+      body: Row(
+        children: <Widget>[
+          StreamBuilder<QuerySnapshot>(
+            stream: FirebaseFirestore.instance.collection('mobil').snapshots(),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) return LinearProgressIndicator();
+              return _buildList(context, snapshot.data.docs);
+            },
+          ),
+          Container(
+            height: 50,
+          ),
+          ElevatedButton(
+            child: Text("Kembali"),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ],
       ),
     );
   }
