@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'auth_services2.dart';
+import 'main1-voting.dart';
 
 // class MainPage extends StatelessWidget {
 //   final User user;
@@ -79,11 +80,17 @@ class NavigationDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           _drawerHeader(),
-          _drawerItem(icon: Icons.folder, text: 'My Files', onTap: () => print('Tap My Files')),
-          _drawerItem(icon: Icons.group, text: 'Shared with me', onTap: () => print('Tap Shared menu')),
-          _drawerItem(icon: Icons.access_time, text: 'Recent', onTap: () => print('Tap Recent menu')),
-          _drawerItem(icon: Icons.delete, text: 'Trash', onTap: () => print('Tap Trash menu')),
-          _drawerItem(icon: Icons.check_box, text: 'Voting', onTap: () {}),
+          _drawerItem(icon: Icons.folder, text: 'My Files', onTap: () => print('Tekan My Files')),
+          _drawerItem(icon: Icons.group, text: 'Shared with me', onTap: () => print('Tekan Shared menu')),
+          _drawerItem(icon: Icons.access_time, text: 'Recent', onTap: () => print('Tekan Recent menu')),
+          _drawerItem(icon: Icons.delete, text: 'Trash', onTap: () => print('Tekan Trash menu')),
+          _drawerItem(
+            icon: Icons.check_box,
+            text: 'Voting',
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Voting()));
+            },
+          ),
           Divider(height: 25, thickness: 1),
           Padding(
             padding: const EdgeInsets.only(left: 20.0, top: 10, bottom: 10),
@@ -95,7 +102,7 @@ class NavigationDrawer extends StatelessWidget {
               ),
             ),
           ),
-          _drawerItem(icon: Icons.bookmark, text: 'Family', onTap: () => print('Tap Family menu')),
+          _drawerItem(icon: Icons.bookmark, text: 'Family', onTap: () => print('Tekan Family menu')),
         ],
       ),
     );
