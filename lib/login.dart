@@ -178,7 +178,7 @@ class LoginPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            RegisterPage();
+            return RegisterPage();
           },
         ),
       ],
@@ -412,7 +412,7 @@ class RegisterPage extends StatelessWidget {
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-            LoginPage();
+            return LoginPage();
           },
         ),
       ],
