@@ -36,25 +36,28 @@ import 'auth_services2.dart';
 import 'package:flutter/material.dart';
 import 'nav-drawer.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: "BelajarFlutter.com",
-    home: NavigationDrawer(),
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     title: "BelajarFlutter.com",
+//     home: NavigationDrawer(),
+//   ));
+// }
 
 class NavigationDrawer extends StatelessWidget {
+  final User user;
+  NavigationDrawer(this.user);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Belajar Drawer Nav"),
+        title: Text(user.displayName),
       ),
       drawer: DrawerWidget(),
       endDrawer: DrawerWidget(),
       body: Center(
         child: Text(
-          'Belajar Navigation Drawer di Flutter',
+          user.uid,
           style: TextStyle(fontSize: 20),
         ),
       ),

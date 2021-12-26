@@ -9,6 +9,6 @@ class Wrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     User firebaseUser = Provider.of<User>(context);
 
-    return (firebaseUser == null) ? LoginPage() : MainPage(firebaseUser);
+    return (firebaseUser == null) ? LoginPage() : NavigationDrawer(firebaseUser);
   }
 }
