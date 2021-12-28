@@ -81,7 +81,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          // autovalidate: true,
           child: TextFormField(
             validator: validatorUsername,
             controller: user,
@@ -110,7 +110,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          // autovalidate: true,
           child: TextFormField(
             validator: validatorPassword,
             controller: password1,
