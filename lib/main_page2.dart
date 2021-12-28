@@ -55,7 +55,7 @@ class NavigationDrawer extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text((user.email != null ? nama : user.email)),
+          title: Text((user.email == "" ? nama : user.email)),
         ),
         drawer: sideBar(context),
         body: Center(
@@ -126,7 +126,7 @@ class NavigationDrawer extends StatelessWidget {
         )
       ],
       accountName: Text(user.uid),
-      accountEmail: Text((user.email != null ? nama : user.email)),
+      accountEmail: Text((user.email == "" ? nama : user.email)),
     );
   }
 
