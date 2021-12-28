@@ -81,7 +81,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorUsername,
             controller: user,
@@ -110,7 +110,7 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorPassword,
             controller: password1,
@@ -191,7 +191,11 @@ class LoginPage extends StatelessWidget {
 }
 
 String validatorUsername(String value) {
-  if (value.length < 3)
+  Pattern pattern = r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
+  RegExp regex = new RegExp(pattern);
+  if (!regex.hasMatch(value))
+    return 'Masukan Email yang benar';
+  else if (value.length < 3)
     return 'Harus lebih 2 huruf';
   else
     return null;

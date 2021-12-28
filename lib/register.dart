@@ -79,7 +79,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorUsername,
             controller: user,
@@ -97,7 +97,7 @@ class RegisterPage extends StatelessWidget {
                   width: 3.0,
                 ),
               ),
-              hintText: "Username",
+              hintText: "Email",
               hintStyle: TextStyle(color: ColorPalette.hintColor),
             ),
             style: TextStyle(color: Colors.white),
@@ -108,7 +108,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorPassword,
             controller: password1,
@@ -138,7 +138,7 @@ class RegisterPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 12.0),
         ),
         Form(
-          autovalidate: true,
+          autovalidateMode: AutovalidateMode.always,
           child: TextFormField(
             validator: validatorConfirm,
             controller: password2,
