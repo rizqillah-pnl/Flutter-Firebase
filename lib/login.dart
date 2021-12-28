@@ -99,7 +99,7 @@ class LoginPage extends StatelessWidget {
                   width: 3.0,
                 ),
               ),
-              hintText: "Username",
+              hintText: "Email",
               hintStyle: TextStyle(color: ColorPalette.hintColor),
             ),
             style: TextStyle(color: Colors.white),
@@ -183,6 +183,22 @@ class LoginPage extends StatelessWidget {
           ),
           onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+          },
+        ),
+        Text(
+          "or",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 12.0,
+          ),
+        ),
+        TextButton(
+          child: Text(
+            "Anonymous",
+            style: TextStyle(color: Colors.white),
+          ),
+          onPressed: () async {
+            await AuthServices.signInAnonymous();
           },
         ),
       ],
