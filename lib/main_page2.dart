@@ -34,19 +34,9 @@ import 'main1-voting.dart';
 //   }
 // }
 
-// import 'package:flutter/material.dart';
-// import 'nav-drawer.dart';
-
-// void main() {
-//   runApp(MaterialApp(
-//     title: "BelajarFlutter.com",
-//     home: NavigationDrawer(),
-//   ));
-// }
-
-class NavigationDrawer extends StatelessWidget {
+class MainPage extends StatelessWidget {
   final User user;
-  NavigationDrawer(this.user);
+  MainPage(this.user);
   String nama = "Anonymous";
   String getNama() {
     if (user.email != null || user.email != "") {

@@ -7,7 +7,6 @@ class AuthServices {
     try {
       UserCredential result = await _auth.signInAnonymously();
       User firebaseUser = result.user;
-
       return firebaseUser;
     } catch (e) {
       print(e.toString());
