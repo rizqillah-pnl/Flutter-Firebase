@@ -169,13 +169,6 @@ class LoginPage extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 16.0),
         ),
-        Text(
-          "or",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 12.0,
-          ),
-        ),
         TextButton(
           child: Text(
             "Register",
