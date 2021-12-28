@@ -126,7 +126,7 @@ class NavigationDrawer extends StatelessWidget {
         )
       ],
       accountName: Text(user.uid),
-      accountEmail: Text(user.email),
+      accountEmail: Text((user.email != null ? nama : user.email)),
     );
   }
 
