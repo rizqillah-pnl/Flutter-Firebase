@@ -47,6 +47,7 @@ import 'main1-voting.dart';
 class NavigationDrawer extends StatelessWidget {
   final User user;
   NavigationDrawer(this.user);
+  String nama = "Anonymous";
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +55,7 @@ class NavigationDrawer extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(user.email),
+          title: Text((user.email != null ? nama : user.email)),
         ),
         drawer: sideBar(context),
         body: Center(
