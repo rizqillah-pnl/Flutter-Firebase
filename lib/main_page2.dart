@@ -39,10 +39,10 @@ class MainPage extends StatelessWidget {
   MainPage(this.user);
   String nama = "Anonymous";
   String getNama() {
-    if (user.email != null || user.email != "") {
-      return user.email;
+    if (user.email == null || user.email == "") {
+      return nama;
     }
-    return nama;
+    return user.email;
   }
 
   @override
