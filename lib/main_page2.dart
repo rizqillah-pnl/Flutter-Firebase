@@ -52,7 +52,7 @@ class MainPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(nama),
+          title: Text(getNama()),
         ),
         drawer: sideBar(context),
         body: Center(
@@ -123,7 +123,7 @@ class MainPage extends StatelessWidget {
         )
       ],
       accountName: Text(user.uid),
-      accountEmail: Text(nama),
+      accountEmail: Text(getNama()),
     );
   }
 
