@@ -53,10 +53,10 @@ class LoginPage extends StatelessWidget {
           padding: EdgeInsets.only(top: 16.0),
         ),
         Text(
-          "Login Into App",
+          "Login",
           style: TextStyle(
             color: Colors.white,
-            fontSize: 16.0,
+            fontSize: 18.0,
           ),
         ),
         Padding(
