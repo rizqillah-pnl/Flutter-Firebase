@@ -48,6 +48,13 @@ class NavigationDrawer extends StatelessWidget {
   final User user;
   NavigationDrawer(this.user);
   String nama = "Anonymous";
+  String getNama() {
+    if (user.email != null || user.email != "") {
+      nama = user.email;
+      return nama;
+    }
+    return nama;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +62,7 @@ class NavigationDrawer extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text((user.email == "" ? nama : user.email)),
+          title: Text(nama),
         ),
         drawer: sideBar(context),
         body: Center(
@@ -126,7 +133,7 @@ class NavigationDrawer extends StatelessWidget {
         )
       ],
       accountName: Text(user.uid),
-      accountEmail: Text((user.email == "" ? nama : user.email)),
+      accountEmail: Text(nama),
     );
   }
 
