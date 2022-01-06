@@ -51,7 +51,7 @@ class _MyHomePageState extends State<TambahCollection> {
                     hintStyle: TextStyle(color: Color(0xffccd1ff)),
                   ),
                   style: TextStyle(color: Colors.white),
-                  autofocus: false,
+                  autofocus: true,
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 200),
