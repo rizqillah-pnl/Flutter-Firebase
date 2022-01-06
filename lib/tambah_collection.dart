@@ -36,12 +36,12 @@ class _MyHomePageState extends State<TambahCollection> {
                   controller: data,
                   decoration: const InputDecoration(
                     border: UnderlineInputBorder(),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: ColorPalette.underlineTextField,
-                        width: 1.5,
-                      ),
-                    ),
+                    // enabledBorder: UnderlineInputBorder(
+                    //   borderSide: BorderSide(
+                    //     color: ColorPalette.underlineTextField,
+                    //     width: 1.5,
+                    //   ),
+                    // ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.white,
