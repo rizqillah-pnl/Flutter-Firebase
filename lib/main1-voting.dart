@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'wrapper2.dart';
+import 'tambah_collection.dart';
 
 void main() => runApp(Voting());
 
@@ -36,6 +37,19 @@ class _MyHomePageState extends State<MyHomePage> {
               Navigator.push(context, MaterialPageRoute(builder: (context) => Wrapper()));
             },
           ),
+          actions: <Widget>[
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: TextButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => TambahCollection()));
+                },
+                child: Text(
+                  "Tambah",
+                ),
+              ),
+            ),
+          ],
         ),
         body: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance.collection('mobil').snapshots(),
