@@ -40,7 +40,19 @@ class _MyHomePageState extends State<MyHomePage> {
         body: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance.collection('mobil').snapshots(),
           builder: (context, snapshot) {
-            if (!snapshot.hasData) return LinearProgressIndicator();
+            if (!snapshot.hasData)
+              return Scaffold(
+                body: Center(
+                  child: Column(
+                    children: <Widget>[
+                      ElevatedButton(
+                        child: Text("Ke Halaman Tambah Koleksi?"),
+                        onPressed: () {},
+                      ),
+                    ],
+                  ),
+                ),
+              );
             return _buildList(context, snapshot.data.docs);
           },
         ),
