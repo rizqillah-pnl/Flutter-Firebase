@@ -46,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Text(
                   "Tambah",
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ),
