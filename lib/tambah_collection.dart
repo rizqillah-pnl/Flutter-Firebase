@@ -13,6 +13,7 @@ class TambahCollection extends StatefulWidget {
 
 class _MyHomePageState extends State<TambahCollection> {
   TextEditingController data = TextEditingController(text: "");
+  TextEditingController data1 = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -32,6 +33,39 @@ class _MyHomePageState extends State<TambahCollection> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                Container(
+                  width: 320,
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        "Nama Tabel",
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                      TextField(
+                        controller: data1,
+                        decoration: const InputDecoration(
+                          border: UnderlineInputBorder(),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 1.5,
+                            ),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 3.0,
+                            ),
+                          ),
+                          hintText: "Tabel Baru",
+                          hintStyle: TextStyle(color: Color(0xffccd1ff)),
+                        ),
+                        style: TextStyle(color: Colors.black),
+                        autofocus: true,
+                      ),
+                    ],
+                  ),
+                ),
                 Container(
                   width: 320,
                   child: Column(
@@ -75,7 +109,8 @@ class _MyHomePageState extends State<TambahCollection> {
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () async {
-                    DatabaseServices.createUpdateProduct("product", name: data.text);
+                    DatabaseServices.createUpdateProduct(data.text, name: data.text);
+                    await Wrapper();
                   },
                 ),
               ],
