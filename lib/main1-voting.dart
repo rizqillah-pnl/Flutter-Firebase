@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'wrapper2.dart';
 import 'tambah_collection.dart';
 
 void main() => runApp(Voting());
@@ -34,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Wrapper()));
+              Navigator.pop(context);
             },
           ),
           actions: <Widget>[

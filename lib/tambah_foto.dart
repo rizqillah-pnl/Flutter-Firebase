@@ -24,7 +24,7 @@ class _MyHomePageState extends State<TambahFoto> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Wrapper()));
+              Navigator.pop(context);
             },
           ),
         ),
