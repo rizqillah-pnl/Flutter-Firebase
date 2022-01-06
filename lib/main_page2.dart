@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'auth_services2.dart';
 import 'main1-voting.dart';
 import 'tambah_collection.dart';
+import 'tambah_foto.dart';
 
 // class MainPage extends StatelessWidget {
 //   final User user;
@@ -85,7 +86,14 @@ class MainPage extends StatelessWidget {
           _drawerItem(icon: Icons.access_time, text: 'Recent', onTap: () => print('Tekan Recent menu')),
           _drawerItem(icon: Icons.delete, text: 'Trash', onTap: () => print('Tekan Trash menu')),
           _drawerItem(
-            icon: Icons.folder,
+            icon: Icons.add,
+            text: 'Foto',
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TambahFoto()));
+            },
+          ),
+          _drawerItem(
+            icon: Icons.add,
             text: 'Tambah Collection',
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => TambahCollection()));
