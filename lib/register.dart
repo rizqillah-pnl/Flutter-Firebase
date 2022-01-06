@@ -14,23 +14,26 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: ColorPalette.primaryColor,
-        padding: EdgeInsets.all(20.0),
-        child: ListView(
-          children: <Widget>[
-            Center(
-              child: Column(
-                children: <Widget>[
-                  _iconRegister(),
-                  _titleDescription(),
-                  _textField(),
-                  _buildButton(context),
-                ],
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Container(
+          color: ColorPalette.primaryColor,
+          padding: EdgeInsets.all(20.0),
+          child: ListView(
+            children: <Widget>[
+              Center(
+                child: Column(
+                  children: <Widget>[
+                    _iconRegister(),
+                    _titleDescription(),
+                    _textField(),
+                    _buildButton(context),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

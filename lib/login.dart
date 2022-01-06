@@ -16,23 +16,26 @@ class LoginPage extends StatelessWidget {
   TextEditingController password1 = TextEditingController(text: "");
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: ColorPalette.primaryColor,
-        padding: EdgeInsets.all(20.0),
-        child: ListView(
-          children: <Widget>[
-            Center(
-              child: Column(
-                children: <Widget>[
-                  _iconLogin(),
-                  _titleDescription(),
-                  _textField(),
-                  _buildButton(context),
-                ],
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Container(
+          color: ColorPalette.primaryColor,
+          padding: EdgeInsets.all(20.0),
+          child: ListView(
+            children: <Widget>[
+              Center(
+                child: Column(
+                  children: <Widget>[
+                    _iconLogin(),
+                    _titleDescription(),
+                    _textField(),
+                    _buildButton(context),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
