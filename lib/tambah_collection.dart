@@ -52,7 +52,7 @@ class _MyHomePageState extends State<TambahCollection> {
                       hintText: "Nama",
                       hintStyle: TextStyle(color: Color(0xffccd1ff)),
                     ),
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.black),
                     autofocus: true,
                   ),
                 ),
