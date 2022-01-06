@@ -34,7 +34,7 @@ class _MyHomePageState extends State<TambahCollection> {
               children: <Widget>[
                 Container(
                   width: 320,
-                  child: Column(
+                  child: Row(
                     children: <Widget>[
                       Text(
                         "Nama",
