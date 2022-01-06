@@ -34,27 +34,35 @@ class _MyHomePageState extends State<TambahCollection> {
               children: <Widget>[
                 Container(
                   width: 320,
-                  child: TextField(
-                    controller: data,
-                    decoration: const InputDecoration(
-                      border: UnderlineInputBorder(),
-                      enabledBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.blue,
-                          width: 1.5,
-                        ),
+                  child: Column(
+                    children: <Widget>[
+                      Text(
+                        "Nama",
+                        style: TextStyle(color: Colors.blue),
                       ),
-                      focusedBorder: UnderlineInputBorder(
-                        borderSide: BorderSide(
-                          color: Colors.blue,
-                          width: 3.0,
+                      TextField(
+                        controller: data,
+                        decoration: const InputDecoration(
+                          border: UnderlineInputBorder(),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 1.5,
+                            ),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 3.0,
+                            ),
+                          ),
+                          hintText: "Koleksi Baru",
+                          hintStyle: TextStyle(color: Color(0xffccd1ff)),
                         ),
+                        style: TextStyle(color: Colors.black),
+                        autofocus: true,
                       ),
-                      hintText: "Koleksi Baru",
-                      hintStyle: TextStyle(color: Color(0xffccd1ff)),
-                    ),
-                    style: TextStyle(color: Colors.black),
-                    autofocus: true,
+                    ],
                   ),
                 ),
                 Padding(
