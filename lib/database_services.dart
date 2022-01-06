@@ -6,7 +6,7 @@ class DatabaseServices {
   static CollectionReference productCollection = FirebaseFirestore.instance.collection("mobil");
 
   static Future<void> createUpdateProduct(String id, {String name}) async {
-    await productCollection.doc(id).set({
+    await productCollection.doc(id + num.toString()).set({
       'name': name,
       'vote': 0
     });
