@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'color.dart';
 import 'wrapper2.dart';
 
 void main() => runApp(TambahCollection());
@@ -36,20 +35,20 @@ class _MyHomePageState extends State<TambahCollection> {
                   controller: data,
                   decoration: const InputDecoration(
                     border: UnderlineInputBorder(),
-                    // enabledBorder: UnderlineInputBorder(
-                    //   borderSide: BorderSide(
-                    //     color: ColorPalette.underlineTextField,
-                    //     width: 1.5,
-                    //   ),
-                    // ),
-                    focusedBorder: UnderlineInputBorder(
+                    enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Colors.white,
+                        width: 1.5,
+                      ),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue,
                         width: 3.0,
                       ),
                     ),
                     hintText: "Nama",
-                    hintStyle: TextStyle(color: ColorPalette.hintColor),
+                    hintStyle: TextStyle(color: Color(0xffccd1ff)),
                   ),
                   style: TextStyle(color: Colors.white),
                   autofocus: false,
