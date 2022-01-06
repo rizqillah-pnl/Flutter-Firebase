@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'wrapper2.dart';
+import 'database_services.dart';
 
 void main() => runApp(TambahCollection());
 
@@ -49,7 +50,7 @@ class _MyHomePageState extends State<TambahCollection> {
                           width: 3.0,
                         ),
                       ),
-                      hintText: "Nama",
+                      hintText: "Koleksi Baru",
                       hintStyle: TextStyle(color: Color(0xffccd1ff)),
                     ),
                     style: TextStyle(color: Colors.black),
@@ -58,6 +59,16 @@ class _MyHomePageState extends State<TambahCollection> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 200),
+                ),
+                ElevatedButton(
+                  child: Text(
+                    "Simpan",
+                    style: TextStyle(color: Colors.white),
+                    textAlign: TextAlign.center,
+                  ),
+                  onPressed: () async {
+                    DatabaseServices.createUpdateProduct("product", name: data.toString());
+                  },
                 ),
               ],
             ),
