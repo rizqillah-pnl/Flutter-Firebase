@@ -31,27 +31,30 @@ class _MyHomePageState extends State<TambahCollection> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TextField(
-                  controller: data,
-                  decoration: const InputDecoration(
-                    border: UnderlineInputBorder(),
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.blue,
-                        width: 1.5,
+                Container(
+                  width: 200,
+                  child: TextField(
+                    controller: data,
+                    decoration: const InputDecoration(
+                      border: UnderlineInputBorder(),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue,
+                          width: 1.5,
+                        ),
                       ),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.blue,
-                        width: 3.0,
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.blue,
+                          width: 3.0,
+                        ),
                       ),
+                      hintText: "Nama",
+                      hintStyle: TextStyle(color: Color(0xffccd1ff)),
                     ),
-                    hintText: "Nama",
-                    hintStyle: TextStyle(color: Color(0xffccd1ff)),
+                    style: TextStyle(color: Colors.white),
+                    autofocus: true,
                   ),
-                  style: TextStyle(color: Colors.white),
-                  autofocus: true,
                 ),
                 Padding(
                   padding: EdgeInsets.only(bottom: 200),
