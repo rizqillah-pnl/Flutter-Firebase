@@ -113,6 +113,7 @@ class _MyHomePageState extends State<TambahCollection> {
                   ),
                   onPressed: () async {
                     DatabaseServices.createUpdateProduct(data1.text, name: data.text);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Wrapper()));
                   },
                 ),
               ],

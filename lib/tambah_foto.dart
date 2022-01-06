@@ -20,7 +20,7 @@ class _MyHomePageState extends State<TambahFoto> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Tambah Koleksi"),
+          title: Text("Gallery Foto"),
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
