@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'auth_services2.dart';
 import 'main1-voting.dart';
+import 'tambah_collection.dart';
 
 // class MainPage extends StatelessWidget {
 //   final User user;
@@ -80,10 +81,16 @@ class MainPage extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           _drawerHeader(),
-          _drawerItem(icon: Icons.folder, text: 'My Files', onTap: () => print('Tekan My Files')),
           _drawerItem(icon: Icons.group, text: 'Shared with me', onTap: () => print('Tekan Shared menu')),
           _drawerItem(icon: Icons.access_time, text: 'Recent', onTap: () => print('Tekan Recent menu')),
           _drawerItem(icon: Icons.delete, text: 'Trash', onTap: () => print('Tekan Trash menu')),
+          _drawerItem(
+            icon: Icons.folder,
+            text: 'Tambah Collection',
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TambahCollection()));
+            },
+          ),
           _drawerItem(
             icon: Icons.check_box,
             text: 'Voting',
