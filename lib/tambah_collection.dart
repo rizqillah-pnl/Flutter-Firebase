@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'wrapper2.dart';
 import 'database_services.dart';
-import 'main1-voting.dart';
 
 void main() => runApp(TambahCollection());
 
@@ -25,7 +23,7 @@ class _MyHomePageState extends State<TambahCollection> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Wrapper()));
+              Navigator.pop(context);
             },
           ),
         ),
