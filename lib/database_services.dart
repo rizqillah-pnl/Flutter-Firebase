@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'main1-voting.dart';
+import 'wrapper2.dart';
 
 class DatabaseServices {
   static int num = 1;
@@ -12,6 +12,6 @@ class DatabaseServices {
       'vote': 0
     });
     num += 1;
-    return Voting();
+    Wrapper();
   }
 }
