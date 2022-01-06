@@ -43,8 +43,8 @@ class _MyHomePageState extends State<TambahCollection> {
                     ),
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Colors.green,
-                        width: 4.0,
+                        color: Colors.blue,
+                        width: 3.0,
                       ),
                     ),
                     hintText: "Nama",
