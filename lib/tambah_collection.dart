@@ -67,7 +67,7 @@ class _MyHomePageState extends State<TambahCollection> {
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () async {
-                    DatabaseServices.createUpdateProduct("product", name: data.toString());
+                    DatabaseServices.createUpdateProduct("product", name: data.text);
                   },
                 ),
               ],
