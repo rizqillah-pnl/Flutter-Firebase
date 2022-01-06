@@ -32,7 +32,7 @@ class _MyHomePageState extends State<TambahCollection> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Container(
-                  width: 350,
+                  width: 320,
                   child: TextField(
                     controller: data,
                     decoration: const InputDecoration(
