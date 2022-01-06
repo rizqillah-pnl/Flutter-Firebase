@@ -66,6 +66,9 @@ class _MyHomePageState extends State<TambahCollection> {
                     ],
                   ),
                 ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                ),
                 Container(
                   width: 320,
                   child: Column(
