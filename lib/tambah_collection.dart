@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'color.dart';
+import 'wrapper2.dart';
 
 void main() => runApp(TambahCollection());
 
@@ -19,6 +20,12 @@ class _MyHomePageState extends State<TambahCollection> {
       home: Scaffold(
         appBar: AppBar(
           title: Text("Tambah Koleksi"),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back, color: Colors.white),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Wrapper()));
+            },
+          ),
         ),
         body: Container(
           child: Center(

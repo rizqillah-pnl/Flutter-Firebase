@@ -5,7 +5,7 @@ class DatabaseServices {
 
   static CollectionReference productCollection = Firestore.instance.collection("products" + num.toString);
 
-  static Future<void> createUpdateProduct(String id, {String name) async {
+  static Future<void> createUpdateProduct(String id, {String name}) async {
     await productCollection.doc(id).set({
       'name': name,
       'vote': 0
