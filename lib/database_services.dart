@@ -21,10 +21,9 @@ class DatabaseServices {
     Reference ref = storage.ref().child(fileName + DateTime.now().toString());
     UploadTask task = ref.putFile(imageFile);
 
-    ref.getDownloadURL().then((fileUrl) {
-      _uploadFile = fileUrl;
+    task.then((res) {
+      res.ref.getDownloadURL();
     });
-    return _uploadFile;
   }
 }
 
