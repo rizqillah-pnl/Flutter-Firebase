@@ -74,7 +74,7 @@ class _MyHomePageState extends State<TambahFoto> {
     );
   }
 
-  Future<File> getImage() async {
+  Future getImage() async {
     final picker = ImagePicker();
     PickedFile pickedFile = await picker.getImage(source: ImageSource.gallery);
     setState(
