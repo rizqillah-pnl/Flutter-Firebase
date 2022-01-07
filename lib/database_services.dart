@@ -17,7 +17,7 @@ class DatabaseServices {
     String fileName = basename(imageFile.path);
 
     FirebaseStorage storage = FirebaseStorage.instance;
-    Reference ref = storage.ref().child(fileName);
+    Reference ref = storage.ref().child(fileName + DateTime.now().toString());
     UploadTask task = ref.putFile(imageFile);
 
     task.then((res) {
