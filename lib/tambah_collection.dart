@@ -122,6 +122,7 @@ class _MyHomePageState extends State<TambahCollection> {
                   onPressed: () async {
                     DatabaseServices.createUpdateProduct(data1.text, name: data.text);
                     Navigator.pop(context);
+                    print("Menambah " + data.text);
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Voting()));
                   },
                 ),
