@@ -6,6 +6,7 @@ import 'tambah_collection.dart';
 import 'tambah_foto.dart';
 import 'deleteCollection.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'color.dart';
 
 // class MainPage extends StatelessWidget {
 //   final User user;
