@@ -19,7 +19,7 @@ class DatabaseServices {
 
     Reference ref = storage.ref().child(fileName + DateTime.now().toString());
     UploadTask task = ref.putFile(imageFile);
-    print(ref);
+    print(task);
 
     task.whenComplete(() {
       return ref.getDownloadURL();
