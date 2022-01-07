@@ -160,14 +160,7 @@ class LoginPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onPressed: () async {
-                final cek = await AuthServices.signIn(user.text, password1.text);
-                if (cek == null) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("Email/Password Salah"),
-                    ),
-                  );
-                }
+                await AuthServices.signIn(user.text, password1.text);
               },
             ),
             decoration: BoxDecoration(

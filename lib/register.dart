@@ -188,15 +188,8 @@ class RegisterPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onPressed: () async {
-                final cek = await AuthServices.signUp(user.text, password1.text);
+                await AuthServices.signUp(user.text, password1.text);
                 Navigator.pop(context);
-                if (cek == null) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: Text("Gagal Register/Email Sudah Ada"),
-                    ),
-                  );
-                }
               },
             ),
             decoration: BoxDecoration(

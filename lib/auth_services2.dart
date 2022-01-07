@@ -1,4 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'color.dart';
 
 class AuthServices {
   static FirebaseAuth _auth = FirebaseAuth.instance;
@@ -10,6 +12,7 @@ class AuthServices {
       return firebaseUser;
     } catch (e) {
       // print(e.toString());
+      Fluttertoast.showToast(msg: e.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
       return null;
     }
   }
@@ -21,6 +24,7 @@ class AuthServices {
       return firebaseUser;
     } catch (e) {
       // print(e.toString());
+      Fluttertoast.showToast(msg: e.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
       return null;
     }
   }
@@ -32,6 +36,7 @@ class AuthServices {
       return firebaseUser;
     } catch (e) {
       // print(e.toString());
+      Fluttertoast.showToast(msg: e.toString(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
       return null;
     }
   }
