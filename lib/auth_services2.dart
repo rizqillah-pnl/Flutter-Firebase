@@ -9,7 +9,7 @@ class AuthServices {
       User firebaseUser = result.user;
       return firebaseUser;
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
     }
   }
@@ -20,7 +20,7 @@ class AuthServices {
       User firebaseUser = result.user;
       return firebaseUser;
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
     }
   }
@@ -31,7 +31,7 @@ class AuthServices {
       User firebaseUser = result.user;
       return firebaseUser;
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
       return null;
     }
   }
