@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'auth_services2.dart';
 import 'color.dart';
 import 'login.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class RegisterPage extends StatelessWidget {
   TextEditingController user = TextEditingController(text: "");
@@ -191,6 +192,7 @@ class RegisterPage extends StatelessWidget {
                 final cek = await AuthServices.signUp(user.text, password1.text);
                 if (cek != null) {
                   Navigator.pop(context);
+                  Fluttertoast.showToast(msg: "Selamat Datang " + user.text, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
                 }
               },
             ),

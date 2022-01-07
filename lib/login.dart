@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'auth_services2.dart';
 import 'color.dart';
 import 'register.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() {
   runApp(
@@ -160,7 +161,10 @@ class LoginPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onPressed: () async {
-                await AuthServices.signIn(user.text, password1.text);
+                final cek = await AuthServices.signIn(user.text, password1.text);
+                if (cek != null) {
+                  Fluttertoast.showToast(msg: "Selamat Datang " + user.text, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
+                }
               },
             ),
             decoration: BoxDecoration(
