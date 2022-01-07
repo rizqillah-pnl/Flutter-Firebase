@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'wrapper2.dart';
 import 'tambah_collection.dart';
+import 'database_services.dart';
 
 void main() => runApp(Voting());
 
@@ -46,6 +47,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 child: Text(
                   "Tambah",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 20.0),
+              child: TextButton(
+                onPressed: () {
+                  DatabaseServices.deleteCollection();
+                },
+                child: Text(
+                  "Delete All",
                   style: TextStyle(color: Colors.white),
                 ),
               ),

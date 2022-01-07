@@ -25,6 +25,14 @@ class DatabaseServices {
       res.ref.getDownloadURL();
     });
   }
+
+  static Future<void> deleteCollection() {
+    productCollection.get().then((snapshot) {
+      for (DocumentSnapshot ds in snapshot.docs) {
+        ds.reference.delete();
+      }
+    });
+  }
 }
 
 // FirebaseStorage storage = FirebaseStorage.instance;
