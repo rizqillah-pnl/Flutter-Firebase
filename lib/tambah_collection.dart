@@ -122,11 +122,11 @@ class _MyHomePageState extends State<TambahCollection> {
                     textAlign: TextAlign.center,
                   ),
                   onPressed: () async {
+                    Fluttertoast.showToast(msg: "Menambahkan " + data.text, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
                     DatabaseServices.createUpdateProduct(data1.text, name: data.text);
                     Navigator.pop(context);
                     print("Menambah " + data.text);
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Voting()));
-                    Fluttertoast.showToast(msg: "Menambahkan " + data.text, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
                   },
                 ),
               ],

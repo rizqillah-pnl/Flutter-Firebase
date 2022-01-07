@@ -57,8 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: EdgeInsets.only(right: 20.0),
               child: TextButton(
                 onPressed: () {
-                  DatabaseServices.deleteCollection();
                   Fluttertoast.showToast(msg: "Delete All Collection", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.red, textColor: ColorPalette.front, fontSize: 16.0);
+                  DatabaseServices.deleteCollection();
                 },
                 child: Text(
                   "Delete All",
@@ -110,9 +110,9 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(record.name),
           trailing: Text(record.votes.toString()),
           onTap: () async {
+            Fluttertoast.showToast(msg: "Menghapus " + record.name, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.red, textColor: ColorPalette.front, fontSize: 16.0);
             print("Menghapus " + record.name);
             await DatabaseServices.delete(record.reference.id);
-            Fluttertoast.showToast(msg: "Menghapus " + record.name, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.red, textColor: ColorPalette.front, fontSize: 16.0);
             setState(() {});
           },
         ),

@@ -62,9 +62,9 @@ class _MyHomePageState extends State<TambahFoto> {
                   child: Text("Upload Image"),
                   onPressed: () async {
                     await getImage();
+                    Fluttertoast.showToast(msg: "Menambahkan Foto " + basename(imagePath), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
                     // await DatabaseServices.uploadImage(_image);
                     imagePath = _image.path;
-                    Fluttertoast.showToast(msg: "Menambahkan Foto " + basename(imagePath), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
 
                     setState(() {});
                   },
