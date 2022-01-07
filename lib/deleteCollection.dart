@@ -108,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
           trailing: Text(record.votes.toString()),
           onTap: () {
             record.reference.delete;
-            print(record.reference);
+            print(record.reference.id);
             setState(() {});
           },
         ),
