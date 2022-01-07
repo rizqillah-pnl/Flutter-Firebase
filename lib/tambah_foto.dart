@@ -61,7 +61,7 @@ class _MyHomePageState extends State<TambahFoto> {
                   child: Text("Upload Image"),
                   onPressed: () async {
                     await getImage();
-                    await DatabaseServices.uploadImage(_image);
+                    // await DatabaseServices.uploadImage(_image);
                     imagePath = _image.path;
 
                     setState(() {});
