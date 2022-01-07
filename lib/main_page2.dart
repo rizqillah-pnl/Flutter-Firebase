@@ -5,6 +5,7 @@ import 'main1-voting.dart';
 import 'tambah_collection.dart';
 import 'tambah_foto.dart';
 import 'deleteCollection.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 // class MainPage extends StatelessWidget {
 //   final User user;
@@ -68,6 +69,7 @@ class MainPage extends StatelessWidget {
                 child: Text("Sign Out"),
                 onPressed: () async {
                   await AuthServices.signOut();
+                  Fluttertoast.showToast(msg: "Sampai Jumpa " + getNama(), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
                 },
               ),
             ],
