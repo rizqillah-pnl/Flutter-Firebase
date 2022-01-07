@@ -21,7 +21,7 @@ class DatabaseServices {
     UploadTask task = ref.putFile(imageFile);
 
     task.then((res) {
-      res.ref.getDownloadURL();
+      return res.ref.getDownloadURL().toString();
     });
   }
 
