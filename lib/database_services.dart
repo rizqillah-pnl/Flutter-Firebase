@@ -16,8 +16,10 @@ class DatabaseServices {
   static Future uploadImage(File imageFile) async {
     String fileName = basename(imageFile.path);
     FirebaseStorage storage = FirebaseStorage.instance;
+    print(storage);
     Reference ref = storage.ref().child(fileName + DateTime.now().toString());
     UploadTask task = ref.putFile(imageFile);
+    Storage
 
     task.whenComplete(() {
       return ref.getDownloadURL();
