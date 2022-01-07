@@ -33,6 +33,10 @@ class DatabaseServices {
       }
     });
   }
+
+  static Future<void> delete(String id) async {
+    await productCollection.doc(id).delete;
+  }
 }
 
 // FirebaseStorage storage = FirebaseStorage.instance;
