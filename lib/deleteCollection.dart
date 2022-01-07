@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'wrapper2.dart';
 import 'tambah_collection.dart';
 import 'database_services.dart';
+import 'color.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(HapusMobil());
 
@@ -56,6 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: TextButton(
                 onPressed: () {
                   DatabaseServices.deleteCollection();
+                  Fluttertoast.showToast(msg: "Delete All Collection", toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.red, textColor: ColorPalette.front, fontSize: 16.0);
                 },
                 child: Text(
                   "Delete All",
@@ -109,6 +112,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onTap: () async {
             print("Menghapus " + record.name);
             await DatabaseServices.delete(record.reference.id);
+            Fluttertoast.showToast(msg: "Menghapus " + record.name, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.red, textColor: ColorPalette.front, fontSize: 16.0);
             setState(() {});
           },
         ),

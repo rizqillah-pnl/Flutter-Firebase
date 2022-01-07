@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'auth_services2.dart';
-import 'color.dart';
 import 'login.dart';
+import 'color.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class RegisterPage extends StatelessWidget {

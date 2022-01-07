@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'wrapper2.dart';
-import 'database_services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
+import 'color.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:path/path.dart';
 
 void main() => runApp(TambahFoto());
 
@@ -63,6 +64,7 @@ class _MyHomePageState extends State<TambahFoto> {
                     await getImage();
                     // await DatabaseServices.uploadImage(_image);
                     imagePath = _image.path;
+                    Fluttertoast.showToast(msg: "Menambahkan Foto " + basename(imagePath), toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
 
                     setState(() {});
                   },

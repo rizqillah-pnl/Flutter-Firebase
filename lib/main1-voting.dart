@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'wrapper2.dart';
 import 'tambah_collection.dart';
 import 'database_services.dart';
+import 'color.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(Voting());
 
@@ -106,11 +108,12 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListTile(
           title: Text(record.name),
           trailing: Text(record.votes.toString()),
-          onTap: () => record.reference.update(
-            {
+          onTap: () {
+            record.reference.update({
               'vote': FieldValue.increment(1)
-            },
-          ),
+            });
+            Fluttertoast.showToast(msg: "Increment " + record.name, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.red, textColor: ColorPalette.front, fontSize: 16.0);
+          },
         ),
       ),
     );

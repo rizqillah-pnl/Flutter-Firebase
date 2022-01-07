@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'database_services.dart';
 import 'main1-voting.dart';
+import 'color.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 void main() => runApp(TambahCollection());
 
@@ -124,6 +126,7 @@ class _MyHomePageState extends State<TambahCollection> {
                     Navigator.pop(context);
                     print("Menambah " + data.text);
                     Navigator.push(context, MaterialPageRoute(builder: (context) => Voting()));
+                    Fluttertoast.showToast(msg: "Menambahkan " + data.text, toastLength: Toast.LENGTH_SHORT, gravity: ToastGravity.CENTER, timeInSecForIosWeb: 1, backgroundColor: ColorPalette.back, textColor: ColorPalette.front, fontSize: 16.0);
                   },
                 ),
               ],
