@@ -4,6 +4,7 @@ import 'auth_services2.dart';
 import 'main1-voting.dart';
 import 'tambah_collection.dart';
 import 'tambah_foto.dart';
+import 'deleteCollection.dart';
 
 // class MainPage extends StatelessWidget {
 //   final User user;
@@ -104,6 +105,13 @@ class MainPage extends StatelessWidget {
             text: 'Voting',
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => Voting()));
+            },
+          ),
+          _drawerItem(
+            icon: Icons.delete,
+            text: 'Delete Collection',
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => HapusMobil()));
             },
           ),
           Divider(height: 25, thickness: 1),
