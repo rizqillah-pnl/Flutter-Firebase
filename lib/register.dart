@@ -189,7 +189,7 @@ class RegisterPage extends StatelessWidget {
               ),
               onPressed: () async {
                 final cek = await AuthServices.signUp(user.text, password1.text);
-                if (cek == null) {
+                if (cek != null) {
                   Navigator.pop(context);
                 }
               },
