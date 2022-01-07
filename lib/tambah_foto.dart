@@ -15,6 +15,7 @@ class TambahFoto extends StatefulWidget {
 
 class _MyHomePageState extends State<TambahFoto> {
   String imagePath;
+  File _image;
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +60,8 @@ class _MyHomePageState extends State<TambahFoto> {
                 ElevatedButton(
                   child: Text("Upload Image"),
                   onPressed: () async {
-                    XFile file = await getImage();
-                    imagePath = await DatabaseServices.uploadImage(file);
+                    await getImage();
+                    imagePath = await DatabaseServices.uploadImage(_image);
 
                     setState(() {});
                   },
@@ -72,10 +73,14 @@ class _MyHomePageState extends State<TambahFoto> {
       ),
     );
   }
-}
 
-Future<XFile> getImage() async {
-  final picker = ImagePicker();
-  return await picker.pickImage(source: ImageSource.gallery);
-  // return File(pickedFile.path);
+  Future<File> getImage() async {
+    final picker = ImagePicker();
+    PickedFile pickedFile = await picker.getImage(source: ImageSource.gallery);
+    setState(
+      () {
+        _image = File(pickedFile.path);
+      },
+    );
+  }
 }
