@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'database_services.dart';
+import 'main1-voting.dart';
 
 void main() => runApp(TambahCollection());
 
@@ -121,6 +122,7 @@ class _MyHomePageState extends State<TambahCollection> {
                   onPressed: () async {
                     DatabaseServices.createUpdateProduct(data1.text, name: data.text);
                     Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Voting()));
                   },
                 ),
               ],
