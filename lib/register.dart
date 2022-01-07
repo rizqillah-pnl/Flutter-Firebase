@@ -188,8 +188,10 @@ class RegisterPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onPressed: () async {
-                await AuthServices.signUp(user.text, password1.text);
-                Navigator.pop(context);
+                final cek = await AuthServices.signUp(user.text, password1.text);
+                if (cek == null) {
+                  Navigator.pop(context);
+                }
               },
             ),
             decoration: BoxDecoration(
