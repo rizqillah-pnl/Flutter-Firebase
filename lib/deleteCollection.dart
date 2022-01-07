@@ -107,7 +107,7 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(record.name),
           trailing: Text(record.votes.toString()),
           onTap: () async {
-            print("Menghapus " + record.reference.id);
+            print("Menghapus " + record.name);
             await DatabaseServices.delete(record.reference.id);
             setState(() {});
           },
