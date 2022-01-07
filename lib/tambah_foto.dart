@@ -35,7 +35,7 @@ class _MyHomePageState extends State<TambahFoto> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                (imagePath == null)
+                (imagePath != null)
                     ? Container(
                         width: 200,
                         height: 200,
