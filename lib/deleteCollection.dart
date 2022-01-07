@@ -106,7 +106,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListTile(
           title: Text(record.name),
           trailing: Text(record.votes.toString()),
-          onTap: () => record.reference.delete,
+          onTap: () {
+            record.reference.delete;
+            setState(() {});
+          },
         ),
       ),
     );
@@ -125,5 +128,5 @@ class Record {
         votes = map['vote'];
   Record.fromSnapshot(DocumentSnapshot snapshot) : this.fromMap(snapshot.data(), reference: snapshot.reference);
   @override
-  String toString() => "Record<$name:$votes>";
+  String toString() => "Record<$name";
 }
