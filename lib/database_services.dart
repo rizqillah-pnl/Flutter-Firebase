@@ -13,15 +13,16 @@ class DatabaseServices {
     });
   }
 
-  static Future<String> uploadImage(File imageFile) async {
+  static Future uploadImage(File imageFile) async {
     String fileName = basename(imageFile.path);
-
     FirebaseStorage storage = FirebaseStorage.instance;
     Reference ref = storage.ref().child(fileName + DateTime.now().toString());
     UploadTask task = ref.putFile(imageFile);
 
-    task.then((res) {
-      res.ref.getDownloadURL();
+    task.whenComplete(() {
+      return ref.getDownloadURL();
+    }).catchError((onError) {
+      print(onError);
     });
   }
 }
