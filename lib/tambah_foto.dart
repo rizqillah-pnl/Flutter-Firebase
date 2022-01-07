@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'wrapper2.dart';
 import 'database_services.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 void main() => runApp(TambahFoto());
 
@@ -12,8 +14,8 @@ class TambahFoto extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<TambahFoto> {
-  TextEditingController data = TextEditingController(text: "");
-  TextEditingController data1 = TextEditingController(text: "");
+  String imagePath;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,10 +32,49 @@ class _MyHomePageState extends State<TambahFoto> {
         ),
         body: Container(
           child: Center(
-            child: Column(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                (imagePath == null)
+                    ? Container(
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(color: Colors.black),
+                          image: DecorationImage(image: NetworkImage(imagePath), fit: BoxFit.cover),
+                        ),
+                      )
+                    : Container(
+                        width: 200,
+                        height: 200,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(color: Colors.black),
+                        ),
+                      ),
+                SizedBox(
+                  height: 10,
+                ),
+                ElevatedButton(
+                  child: Text("Upload Image"),
+                  onPressed: () async {
+                    File file = await getImage();
+                    imagePath = await DatabaseServices.uploadImage(file);
+
+                    setState(() {});
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
     );
   }
+}
+
+Future getImage() async {
+  final picker = ImagePicker();
+  return await picker.pickImage(source: ImageSource.gallery);
 }
