@@ -188,8 +188,15 @@ class RegisterPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               onPressed: () async {
-                await AuthServices.signUp(user.text, password1.text);
+                final cek = await AuthServices.signUp(user.text, password1.text);
                 Navigator.pop(context);
+                if (cek != null) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(cek.toString()),
+                    ),
+                  );
+                }
               },
             ),
             decoration: BoxDecoration(
