@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:io';
 import 'package:path/path.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:image_picker/image_picker.dart';
 
 class DatabaseServices {
   static CollectionReference productCollection = FirebaseFirestore.instance.collection("mobil");
@@ -13,12 +14,12 @@ class DatabaseServices {
     });
   }
 
-  static Future uploadImage(File imageFile) async {
+  static Future uploadImage(XFile imageFile) async {
     String fileName = basename(imageFile.path);
     FirebaseStorage storage = FirebaseStorage.instance;
 
     Reference ref = storage.ref().child("image1" + DateTime.now().toString());
-    UploadTask task = ref.putFile(imageFile);
+    UploadTask task = ref.putFile(File(imageFile.path));
     print(fileName);
 
     task.whenComplete(() {

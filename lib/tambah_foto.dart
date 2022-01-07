@@ -59,7 +59,7 @@ class _MyHomePageState extends State<TambahFoto> {
                 ElevatedButton(
                   child: Text("Upload Image"),
                   onPressed: () async {
-                    File file = await getImage();
+                    XFile file = await getImage();
                     imagePath = await DatabaseServices.uploadImage(file);
 
                     setState(() {});
@@ -74,9 +74,8 @@ class _MyHomePageState extends State<TambahFoto> {
   }
 }
 
-Future<File> getImage() async {
+Future<XFile> getImage() async {
   final picker = ImagePicker();
-  PickedFile pickedFile = await picker.getImage(source: ImageSource.gallery);
-  print(pickedFile.path);
-  return File(pickedFile.path);
+  return await picker.pickImage(source: ImageSource.gallery);
+  // return File(pickedFile.path);
 }
